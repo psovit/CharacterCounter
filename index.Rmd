@@ -25,7 +25,7 @@ An application that can count the number of times a character occured in the giv
 
 <b> Character Counter</b>
 
-![picture of spaghetti](assets/img/cap1.png)
+![picture of shiny app](assets/img/cap1.png)
 
 --- 
 

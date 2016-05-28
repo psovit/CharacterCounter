@@ -25,13 +25,14 @@ An application that can count the number of times a character occured in the giv
 
 <b> Character Counter</b>
 
-![picture of spaghetti](assets/img/cap1.png)
+![picture of shiny app](assets/img/cap1.png)
 
 --- 
 
 ## Character Counter
 
-Character Counter is a simple application that takes in string input and determines the occurence of characters within the provided text input. It then provides a table value of frequency of the characters occurence and also plots a nice graph to give a visual representation.
+Character Counter is a simple application that takes in string input and determines the occurence of characters within the provided text input. 
+It then provides a table value of frequency of the characters occurence and also plots a nice graph to give a visual representation.
 
 The application is available at: https://psovit.shinyapps.io/ddp_assgn/
 
@@ -42,7 +43,8 @@ The application is available at: https://psovit.shinyapps.io/ddp_assgn/
 I would like to thank you for trying this application. 
 
 Please feel free to contribute to this Character Counter application to add new features to it.
-The code for the application is available at: 
+
+The code for the application is available at: https://github.com/psovit/CharacterCounter.git
 
 
 
