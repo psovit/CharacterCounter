@@ -1,20 +1,23 @@
-library(shiny)
-library(knitr)
-options(device.ask.default = FALSE)
-
+library(UsingR)
 shinyServer(function(input, output) {
-
-  output$nbOut = reactive({
-    src = input$nbSrc
-    if (length(src) == 0L || src == '') return('Nothing to show yet...')
-    owd = setwd(tempdir()); on.exit(setwd(owd))
-    opts_knit$set(root.dir = owd)
-
-    paste(knit2html(text = src, fragment.only = TRUE, quiet = TRUE),
-          '<script>',
-          '// highlight code blocks',
-          "$('#nbOut pre code').each(function(i, e) {hljs.highlightBlock(e)});",
-          'MathJax.Hub.Queue(["Typeset", MathJax.Hub]); // update MathJax expressions',
-          '</script>', sep = '\n')
+  
+  alphabetText <- reactive({gsub('[0-9]+', '', input$strInput)})
+  
+  lsText = reactive({unlist(strsplit(alphabetText(), split=""))}) 
+  
+  tblText <- reactive({table(lsText())})
+  
+  output$value <- renderPrint({
+      if(nchar(input$strInput)){
+        tblText()
+      }
+    })
+  
+  output$histTbl <- renderPlot({
+    if(nchar(input$strInput)){
+      plot(tblText(), xlab='Characters', col='lightblue',main='Frequency Plot:')
+    }
   })
+  
 })
+
